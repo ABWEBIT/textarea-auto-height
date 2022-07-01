@@ -1,11 +1,11 @@
 html,
 body{
+  overflow:hidden;
   position:relative;
   margin:0;
   padding:0;
   width:100%;
-  height:100%;
-  overflow:hidden;}
+  height:100%;}
 
 body{
   background-color:rgb(50,50,50);}
@@ -28,5 +28,3 @@ textarea{
   box-sizing:border-box;
   padding:25px;
   width:100%;}
-
-textarea::-webkit-scrollbar{width:0;}
