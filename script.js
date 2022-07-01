@@ -11,8 +11,6 @@ let textAreaAutoHeight = () => {
 
     textArea[i].addEventListener('input', function(){
       this.rows = 1;
-      if(/android|webos|iphone|ipad|opera mini/i.test(navigator.userAgent.toLowerCase())){tPadding = 0;}
-      console.log(navigator.userAgent.toLowerCase());
       this.rows = Math.floor((this.scrollHeight - tPadding) / tRowHeight);
     });
   };
