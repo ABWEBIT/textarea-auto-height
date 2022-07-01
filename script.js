@@ -14,7 +14,7 @@ let textAreaAutoHeight = () => {
 
     element.addEventListener('input', function(){
       this.rows = 1;
-      this.rows = Math.floor((this.scrollHeight) / tLineHeight);
+      this.rows = Math.floor(this.scrollHeight / tLineHeight);
     });
   };
 };
