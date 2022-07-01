@@ -24,7 +24,7 @@ textarea{
   margin-top:25px;
   outline:none;
   resize:none;
-  border:10px solid #FF0000;
+  border:0;
   box-sizing:border-box;
   padding:25px;
   width:100%;}
