@@ -1,5 +1,6 @@
+'use strict';
 let textAreaAutoHeight = () => {
-  var textArea = document.getElementsByClassName('textAreaAutoHeight');
+  let textArea = document.getElementsByClassName('textAreaAutoHeight');
   for(let i = 0; i < textArea.length; i++){ 
     let tStyle,tHeight,tPadding,tBorder,tRowHeight;
 
