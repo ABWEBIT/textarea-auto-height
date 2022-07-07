@@ -1,19 +1,25 @@
 'use strict';
+let tArea,tStyle,tPadding,tRowHeight,tRows;
 let textAreaAutoHeight = () => {
-  let textArea = document.getElementsByClassName('textAreaAutoHeight');
-  for(let el of textArea){ 
-    let tStyle,tHeight,tPadding,tBorder,tRowHeight;
-
+  tArea = document.getElementsByClassName('textAreaAutoHeight');
+  for(let el of tArea){
+    el.rows = 1;
     tStyle = window.getComputedStyle(el);
-    tHeight = parseFloat(tStyle.height);
     tPadding = parseFloat(tStyle.paddingTop) + parseFloat(tStyle.paddingBottom);
-    tBorder = parseFloat(tStyle.borderTop) + parseFloat(tStyle.borderBottom);
-    tRowHeight = tHeight - tPadding - tBorder;
-
-    el.addEventListener('input', function(){
-      this.rows = 1;
-      this.rows = Math.round((this.scrollHeight - tPadding) / tRowHeight);
-    });
+    if(typeof tRowHeight === 'undefined'){
+      tRowHeight = el.clientHeight - tPadding;
+    };
+    tRows = Math.round((el.scrollHeight - tPadding) / tRowHeight);
+    console.log(tRowHeight);
+    if(el.rows < tRows || el.rows > tRows){
+      el.rows = tRows;
+    };
   };
 };
 textAreaAutoHeight();
+document.addEventListener('input',function(el){
+  if(el.target.classList.contains('textAreaAutoHeight')){
+    textAreaAutoHeight();
+  }
+});
+window.addEventListener('resize',textAreaAutoHeight);
