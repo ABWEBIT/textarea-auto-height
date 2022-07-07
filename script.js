@@ -10,7 +10,6 @@ let textAreaAutoHeight = () => {
       tRowHeight = el.clientHeight - tPadding;
     };
     tRows = Math.round((el.scrollHeight - tPadding) / tRowHeight);
-    console.log(tRowHeight);
     if(el.rows < tRows || el.rows > tRows){
       el.rows = tRows;
     };
