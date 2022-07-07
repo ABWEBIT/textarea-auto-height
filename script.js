@@ -15,7 +15,6 @@ let textAreaAutoHeight = () => {
     };
   };
 };
-textAreaAutoHeight();
 document.addEventListener('input',function(el){
   if(el.target.classList.contains('textAreaAutoHeight')){
     textAreaAutoHeight();
