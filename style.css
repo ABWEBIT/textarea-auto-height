@@ -20,6 +20,7 @@ body{
   margin:auto;}
 
 textarea{
+  overflow-wrap:break-word;
   overflow:hidden;
   margin-top:25px;
   outline:none;
