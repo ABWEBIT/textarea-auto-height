@@ -1,16 +1,23 @@
 'use strict';
 class Textarea{
-  constructor(element){
+  constructor(element,rowsMax){
     this.element = document.getElementById(element);
+    this.element.value = '';
+    this.rowsMax = rowsMax;
+    this.rowsCount = 0;
     this.style = window.getComputedStyle(this.element);
     this.padding = parseFloat(this.style.paddingTop) + parseFloat(this.style.paddingBottom);
     this.rowHeight = this.element.clientHeight - this.padding;
-    this.element.addEventListener('input',()=>this.resizeTextarea());
-    window.addEventListener('resize',()=>this.resizeTextarea());
+    this.element.addEventListener('input',()=>this.textareaAutoHeight());
+    window.addEventListener('resize',()=>this.textareaAutoHeight());
   };
-  resizeTextarea(){
+  textareaAutoHeight(){
     this.element.rows = 1;
-    this.element.rows = Math.round((this.element.scrollHeight - this.padding) / this.rowHeight);
+    this.rowsCount = Math.round((this.element.scrollHeight - this.padding) / this.rowHeight);
+    if(this.rowsMax === 0) this.element.rows = this.rowsCount
+    else if(this.rowsMax > 0) this.rowsCount <= this.rowsMax ? this.element.rows = this.rowsCount : this.element.rows = this.rowsMax
+    else throw new Error('maximum rows number must be positive integer');
   };
 }
-new Textarea('chat');
+new Textarea('chat',2);
+// textarea id, maximum rows >= 0 (0 for infinity)
