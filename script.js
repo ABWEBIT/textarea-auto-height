@@ -1,7 +1,7 @@
 'use strict';
 class Textarea{
-  constructor(element,rowsMax){
-    this.element = document.getElementById(element);
+  constructor(elementId,rowsMax){
+    this.element = document.getElementById(elementId);
     this.element.value = '';
     this.rowsMax = rowsMax;
     this.rowsCount = 0;
@@ -19,5 +19,5 @@ class Textarea{
     else throw new Error('maximum rows number must be positive integer');
   };
 }
-new Textarea('chat',2);
+new Textarea('chat',4);
 // textarea id, maximum rows >= 0 (0 for infinity)
