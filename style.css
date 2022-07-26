@@ -26,7 +26,7 @@ textarea{
   cursor:auto;
   border-radius:6px;
   box-sizing:border-box;
-  padding:25px 20px;
+  padding:15px 10px;
   width:100%;}
 
 textarea::-webkit-scrollbar{width:6px;}
