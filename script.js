@@ -9,7 +9,7 @@ class Textarea{
     this.padding = parseFloat(this.style.paddingTop) + parseFloat(this.style.paddingBottom);
     this.rowHeight = this.element.clientHeight - this.padding;
     this.element.addEventListener('input',()=>this.textareaAutoHeight());
-    //window.addEventListener('resize',()=>this.textareaAutoHeight());
+    window.addEventListener('resize',()=>this.textareaAutoHeight());
   };
   textareaAutoHeight(){
     this.element.rows = 1;
