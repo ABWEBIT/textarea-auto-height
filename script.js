@@ -5,10 +5,7 @@ class Textarea{
     this.element.value = '';
     this.rowsMax = rowsMax;
     this.rowsCount = 0;
-    this.style = window.getComputedStyle(this.element);
-    this.padding = parseFloat(this.style.paddingTop) + parseFloat(this.style.paddingBottom);
-    this.rowHeight = this.element.clientHeight - this.padding;
-    this.element.addEventListener('input',()=>this.textareaAutoHeight());
+
   };
   textareaAutoHeight(){
     this.element.rows = 1;
