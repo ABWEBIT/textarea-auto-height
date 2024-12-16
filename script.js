@@ -13,9 +13,7 @@ class Textarea{
   textareaAutoHeight(){
     this.element.rows = 1;
     this.rowsCount = Math.round((this.element.scrollHeight - this.padding) / this.rowHeight);
-    if(this.rowsMax === 0) this.element.rows = this.rowsCount
-    else if(this.rowsMax > 0) this.rowsCount <= this.rowsMax ? this.element.rows = this.rowsCount : this.element.rows = this.rowsMax
-    else throw new Error('maximum rows number must be positive integer');
+
   };
 }
 new Textarea('chat',4);
